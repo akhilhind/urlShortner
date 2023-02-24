@@ -20,4 +20,4 @@ def shrink_url(url):
 
     with open("db.json", 'w') as db:
         db.write(new_data)
-    return "http://127.0.0.1:5000/" + res
+    return "https://cho-ti.onrender.com/" + res
