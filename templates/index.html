@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div id='main'>
+    <h1>cho.ti</h1>
+    <h2>cho.ti is a web url shortening service, free of cost and easy to use</h2>
+    <p>Just a fun time projekt for learning new things. Full code is available on <a href="">github.</a></p>
+</div>
+<div id="down">
+    <div id="form">
+        <h2>Paste URL to be shortened</h2>
+        <form action="/getURL", method="POST">
+            <input id='url' name='url' type="url" placeholder="Enter url"  required value={{ original_url }}>
+            <button type="submit">Shrink URL</button>
+        </form>
+    </div>
+    <div id="result" {{result_display}}>
+        <div id="resURL">
+            <p id="shortURL">{{ short_url }}</p>
+        </div>
+        <button onclick="(function() {let url = document.getElementById('shortURL'); navigator.clipboard.writeText(url.value)})"">Copy URL</button>
+    </div>
+</div>
+{% endblock %}
